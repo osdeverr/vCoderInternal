@@ -16,7 +16,7 @@
 
 #define VELEM_STR(x) #x
 
-#define VELEM_DECODE(T) \
+#define VELEM_TRY_DECODE(T) \
 if(type == VELEM_STR(T)) \
 { \
     ptr = new T(); \
@@ -33,10 +33,10 @@ namespace vcoder::elements
         auto specific = data["specific"];
         BasicElement* ptr = nullptr;
         
-        VELEM_DECODE(Root);
-        VELEM_DECODE(Function);
-        VELEM_DECODE(Type);
-        VELEM_DECODE(Namespace);
+        VELEM_TRY_DECODE(Root);
+        VELEM_TRY_DECODE(Function);
+        VELEM_TRY_DECODE(Type);
+        VELEM_TRY_DECODE(Namespace);
         
         if(ptr)
         {
@@ -51,5 +51,5 @@ namespace vcoder::elements
     }
 }
 
-#undef VELEM_DECODE
+#undef VELEM_TRY_DECODE
 #undef VELEM_STR
