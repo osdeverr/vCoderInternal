@@ -1,0 +1,32 @@
+{
+    "name": "_ROOT",
+    "type": "Root",
+    "specific": {
+        "isRoot": true
+    },
+    "children": [
+        {
+            "name": "main",
+            "type": "Function",
+            "specific": {
+                "isFunction": true
+            }
+        },
+        {
+            "name": "vcoder",
+            "type": "Namespace",
+            "specific": {
+                "isNamespace": true
+            },
+            "children": [
+                {
+                    "name": "Run",
+                    "type": "Function",
+                    "specific": {
+                        "isFunction": true
+                    }
+                }
+            ]
+        }
+    ]
+}
