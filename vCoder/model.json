@@ -13,6 +13,13 @@
             }
         },
         {
+            "name": "putchar",
+            "type": "Function",
+            "specific": {
+                "isFunction": true
+            }
+        },
+        {
             "name": "vcoder",
             "type": "Namespace",
             "specific": {
@@ -24,6 +31,20 @@
                     "type": "Function",
                     "specific": {
                         "isFunction": true
+                    }
+                },
+                {
+                    "name": "UInt32",
+                    "type": "Type",
+                    "specific": {
+                        "isType": true
+                    }
+                },
+                {
+                    "name": "Empty",
+                    "type": "Namespace",
+                    "specific": {
+                        "isNamespace": true
                     }
                 }
             ]

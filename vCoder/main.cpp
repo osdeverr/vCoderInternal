@@ -10,7 +10,6 @@
 #include <fstream>
 #include <sstream>
 #include "elements/elements.h"
-#include "common/typedptr.h"
 #include "common/serializable.h"
 #include "common/json.hpp"
 
@@ -31,15 +30,6 @@ void Serialize(const vcoder::common::ISerializable<nlohmann::json>& obj)
 
 int main(int argc, const char * argv[]) {
     using namespace vcoder::elements;
-    Root root;
-    root.addChild(new Function("main"));
-    
-    auto ns = new Namespace("vcoder");
-    ns->addChild(new Function("Run"));
-    root.addChild(ns);
-    
-    printout(root);
-    
     std::ifstream f("/Users/osdever/Documents/XCode/vCoder/vCoder/model.json");
     std::stringstream ss;
     ss << f.rdbuf();
