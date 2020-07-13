@@ -25,7 +25,7 @@ if(type == VELEM_STR(T)) \
 
 namespace vcoder::elements
 {
-    BasicElement* BasicElement::deserialize(const ElementSerializationFormat& data)
+    BasicElement* BasicElement::deserialize(const SerializationFormat& data)
     {
         auto name = data["name"].template get<std::string>();
         auto type = data["type"].template get<std::string>();

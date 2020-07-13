@@ -22,9 +22,9 @@ namespace vcoder::elements
         
         /// @brief Implements BasicElement::getSerializable().
         /// @return This element's CX serializable
-        virtual common::PolyWrapper<common::ISerializable<ElementSerializationFormat>> getSpecificSerializable() override
+        virtual BasicElement::SerializablePtr getSpecificSerializable() override
         {
-            return common::CXSerializable<ElementSerializationFormat, Function>(*this);
+            return common::CXSerializable<BasicElement::SerializationFormat, Function>(*this);
         }
         
         /// @brief Implements BasicElement::type().

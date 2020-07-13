@@ -17,11 +17,13 @@
 
 namespace vcoder::elements
 {
-    using ElementSerializationFormat = nlohmann::json;
-    
     /// @brief The base class for all vCoder elements.
     class BasicElement
     {
+    public:
+        using SerializationFormat = nlohmann::json;
+        using SerializablePtr = common::PolyWrapper<common::ISerializable<SerializationFormat>>;
+        
     private:
         template<class Format>
         class Serializer : public common::ISerializable<Format>
@@ -38,7 +40,7 @@ namespace vcoder::elements
                 f["specific"] = mElement->getSpecificSerializable()->serialize();
                 
                 for(auto& child : mElement->mChildren)
-                    f["children"].push_back(child->getSerializable().serialize());
+                    f["children"].push_back(child->getSerializable()->serialize());
                     
                 return f;
             }
@@ -102,18 +104,18 @@ namespace vcoder::elements
         
         /// @brief Deserializes a BasicElement from serialized data.
         /// @param data The data to recreate a BasicElement from
-        static BasicElement* deserialize(const ElementSerializationFormat& data);
+        static BasicElement* deserialize(const SerializationFormat& data);
         
         /// @brief Gets the CX serializable associated with this element's generic and type-specific data.
         /// @return The CX serializable
-        common::ISerializable<ElementSerializationFormat>&& getSerializable()
+        SerializablePtr getSerializable()
         {
-            return Serializer<ElementSerializationFormat>(this);
+            return Serializer<SerializationFormat>(this);
         }
         
         /// @brief Gets the CX serializable associated with this element's type-specific data.
         /// @return The CX serializable
-        virtual common::PolyWrapper<common::ISerializable<ElementSerializationFormat>> getSpecificSerializable() = 0;
+        virtual SerializablePtr getSpecificSerializable() = 0;
         
         /// @brief Gets the name of this element.
         /// @return This element's name
