@@ -17,5 +17,7 @@ namespace vcoder::concepts
         Concept() = delete;
         Concept(const Concept&) = delete;
         Concept(Concept&&) = delete;
+        
+        virtual ~Concept() = 0;
     };
 }
