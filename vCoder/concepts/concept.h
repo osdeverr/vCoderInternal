@@ -10,7 +10,7 @@
 
 namespace vcoder::concepts
 {
-    /// @brief The Concept class is supposed to be inherited from to explicitly prevent any instaniation of concept classes.
+    /// @brief The Concept class is supposed to be inherited from to explicitly prevent any instantiation of concept classes.
     class Concept
     {
     private:
