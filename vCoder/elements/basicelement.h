@@ -12,6 +12,7 @@
 #include <iostream>
 
 #include "../common/serializable.h"
+#include "../common/polywrapper.h"
 #include "../common/json.hpp"
 
 namespace vcoder::elements
@@ -23,7 +24,7 @@ namespace vcoder::elements
     {
     private:
         template<class Format>
-        class Serializer : public vcoder::common::ISerializable<Format>
+        class Serializer : public common::ISerializable<Format>
         {
         public:
             Serializer(BasicElement* element)
@@ -34,7 +35,7 @@ namespace vcoder::elements
                 Format f;
                 f["name"] = mElement->name();
                 f["type"] = mElement->type();
-                f["specific"] = mElement->getSpecificSerializable().serialize();
+                f["specific"] = mElement->getSpecificSerializable()->serialize();
                 
                 for(auto& child : mElement->mChildren)
                     f["children"].push_back(child->getSerializable().serialize());
@@ -105,14 +106,14 @@ namespace vcoder::elements
         
         /// @brief Gets the CX serializable associated with this element's generic and type-specific data.
         /// @return The CX serializable
-        vcoder::common::ISerializable<ElementSerializationFormat>&& getSerializable()
+        common::ISerializable<ElementSerializationFormat>&& getSerializable()
         {
             return Serializer<ElementSerializationFormat>(this);
         }
         
         /// @brief Gets the CX serializable associated with this element's type-specific data.
         /// @return The CX serializable
-        virtual vcoder::common::ISerializable<ElementSerializationFormat>&& getSpecificSerializable() = 0;
+        virtual common::PolyWrapper<common::ISerializable<ElementSerializationFormat>> getSpecificSerializable() = 0;
         
         /// @brief Gets the name of this element.
         /// @return This element's name

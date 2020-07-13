@@ -20,7 +20,7 @@
 if(type == VELEM_STR(T)) \
 { \
     ptr = new T(); \
-    ptr->getSpecificSerializable().deserializeFrom(data); \
+    ptr->getSpecificSerializable()->deserializeFrom(data); \
 }
 
 namespace vcoder::elements
