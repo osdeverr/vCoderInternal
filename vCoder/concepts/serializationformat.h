@@ -20,7 +20,7 @@ namespace vcoder::concepts
         /// @brief Default-constructs the element.
         SerializationFormat();
         
-        /// @brief Parses this element's value as T
+        /// @brief Tries parsing this element's value as T.
         /// @tparam T The type to parse this element's value as
         /// @return The parsed value
         template<class T>
