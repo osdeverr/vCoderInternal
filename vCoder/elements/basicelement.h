@@ -16,6 +16,8 @@
 
 namespace vcoder::elements
 {
+    using ElementSerializationFormat = nlohmann::json;
+    
     /// @brief The base class for all vCoder elements.
     class BasicElement
     {
@@ -99,19 +101,18 @@ namespace vcoder::elements
         
         /// @brief Deserializes a BasicElement from serialized data.
         /// @param data The data to recreate a BasicElement from
-        template<class Format>
-        static BasicElement* deserialize(const Format& data);
+        static BasicElement* deserialize(const ElementSerializationFormat& data);
         
         /// @brief Gets the CX serializable associated with this element's generic and type-specific data.
         /// @return The CX serializable
-        vcoder::common::ISerializable<nlohmann::json>&& getSerializable()
+        vcoder::common::ISerializable<ElementSerializationFormat>&& getSerializable()
         {
-            return Serializer<nlohmann::json>(this);
+            return Serializer<ElementSerializationFormat>(this);
         }
         
         /// @brief Gets the CX serializable associated with this element's type-specific data.
         /// @return The CX serializable
-        virtual vcoder::common::ISerializable<nlohmann::json>&& getSpecificSerializable() = 0;
+        virtual vcoder::common::ISerializable<ElementSerializationFormat>&& getSpecificSerializable() = 0;
         
         /// @brief Gets the name of this element.
         /// @return This element's name

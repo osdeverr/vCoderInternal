@@ -25,8 +25,7 @@ if(type == VELEM_STR(T)) \
 
 namespace vcoder::elements
 {
-    template<class Format>
-    BasicElement* BasicElement::deserialize(const Format& data)
+    BasicElement* BasicElement::deserialize(const ElementSerializationFormat& data)
     {
         auto name = data["name"].template get<std::string>();
         auto type = data["type"].template get<std::string>();
@@ -44,7 +43,7 @@ namespace vcoder::elements
             
             if(data.find("children") != data.end())
                 for(auto& child : data["children"])
-                    ptr->addChild(BasicElement::deserialize<Format>(child));
+                    ptr->addChild(BasicElement::deserialize(child));
         }
         
         return ptr;

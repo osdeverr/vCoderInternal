@@ -20,7 +20,7 @@ namespace vcoder::common
     public:
         virtual ~ISerializable() {}
         
-        /// @brief Serializes the internal object and returns the serialized representation.
+        /// @brief Serializes the internal object and returns its serialized representation.
         /// @return The serialized representation of this object
         virtual Format serialize() const = 0;
         

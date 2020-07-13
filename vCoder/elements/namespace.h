@@ -29,9 +29,9 @@ namespace vcoder::elements
         
         /// @brief Implements BasicElement::getSerializable().
         /// @return This element's CX serializable
-        virtual vcoder::common::ISerializable<nlohmann::json>&& getSpecificSerializable() override
+        virtual vcoder::common::ISerializable<ElementSerializationFormat>&& getSpecificSerializable() override
         {
-            return vcoder::common::CXSerializable<nlohmann::json, Namespace>(*this);
+            return vcoder::common::CXSerializable<ElementSerializationFormat, Namespace>(*this);
         }
         
         CXPROPS(Namespace) (
