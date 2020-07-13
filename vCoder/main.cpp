@@ -35,8 +35,6 @@ int main(int argc, const char * argv[]) {
     ss << f.rdbuf();
     auto mdl = ss.str();
     
-    BasicElement* pElement = BasicElement::deserialize(nlohmann::json::parse(mdl));
+    auto pElement = std::unique_ptr<BasicElement>(BasicElement::deserialize(nlohmann::json::parse(mdl)));
     printout(*pElement);
-    
-    delete pElement;
 }

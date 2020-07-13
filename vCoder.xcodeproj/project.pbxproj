@@ -25,6 +25,8 @@
 /* Begin PBXFileReference section */
 		5FDCE78224BC2FC30056CEA8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5FDCE78324BC343A0056CEA8 /* polywrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = polywrapper.h; sourceTree = "<group>"; };
+		5FDCE79D24BCBF1C0056CEA8 /* concept.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = concept.h; sourceTree = "<group>"; };
+		5FDCE79E24BCBFF00056CEA8 /* serializationformat.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = serializationformat.h; sourceTree = "<group>"; };
 		5FF4538724B78D0C00BFB11F /* vCoder */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = vCoder; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF4538A24B78D0C00BFB11F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		5FF4539224B78D8400BFB11F /* basicelement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = basicelement.h; sourceTree = "<group>"; };
@@ -51,6 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5FDCE79C24BCBF060056CEA8 /* concepts */ = {
+			isa = PBXGroup;
+			children = (
+				5FDCE79D24BCBF1C0056CEA8 /* concept.h */,
+				5FDCE79E24BCBFF00056CEA8 /* serializationformat.h */,
+			);
+			path = concepts;
+			sourceTree = "<group>";
+		};
 		5FF4537E24B78D0C00BFB11F = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +82,7 @@
 		5FF4538924B78D0C00BFB11F /* vCoder */ = {
 			isa = PBXGroup;
 			children = (
+				5FDCE79C24BCBF060056CEA8 /* concepts */,
 				5FF4539A24B839DB00BFB11F /* common */,
 				5FF4539124B78D2900BFB11F /* elements */,
 				5FF4539324B7916700BFB11F /* generators */,

@@ -21,7 +21,11 @@ namespace vcoder::elements
     class BasicElement
     {
     public:
+        /// @brief Represents the serialization format to use for elements.
+        /// @remarks We're using JSON: anything with the same interface would be alright though.
         using SerializationFormat = nlohmann::json;
+        
+        /// @brief Represents a pointer to the serializable object, here only for convenience.
         using SerializablePtr = common::PolyWrapper<common::ISerializable<SerializationFormat>>;
         
     private:
@@ -115,6 +119,7 @@ namespace vcoder::elements
         }
         
         /// @brief Gets the CX serializable associated with this element's type-specific data.
+        /// @remarks One should @b not generally use it directly! Use getSerializable instead.
         /// @return The CX serializable
         virtual SerializablePtr getSpecificSerializable() = 0;
         
