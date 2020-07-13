@@ -63,7 +63,8 @@ namespace vcoder::elements
         }
         
     public:
-        /// @remarks This is basically RAII: the entire hierarchy is guaranteed to be destroyed.
+        /// @brief This is basically RAII: the entire hierarchy is guaranteed to be destroyed.
+        /// @remarks The user is still responsible for deleting the last object - one could wrap it into a smart pointer for convenience...
         virtual ~BasicElement()
         {
             if(mParent)
