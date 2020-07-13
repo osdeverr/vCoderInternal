@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		5FDCE78224BC2FC30056CEA8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5FDCE78324BC343A0056CEA8 /* polywrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = polywrapper.h; sourceTree = "<group>"; };
+		5FDCE78424BC654A0056CEA8 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		5FF4538724B78D0C00BFB11F /* vCoder */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = vCoder; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF4538A24B78D0C00BFB11F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		5FF4539224B78D8400BFB11F /* basicelement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = basicelement.h; sourceTree = "<group>"; };
@@ -54,6 +55,7 @@
 		5FF4537E24B78D0C00BFB11F = {
 			isa = PBXGroup;
 			children = (
+				5FDCE78424BC654A0056CEA8 /* .travis.yml */,
 				5FDCE78224BC2FC30056CEA8 /* README.md */,
 				5FF4538924B78D0C00BFB11F /* vCoder */,
 				5FF4538824B78D0C00BFB11F /* Products */,
